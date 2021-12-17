@@ -17,9 +17,13 @@ const buttonLevelThree = document.querySelector('.button.level-three');
 
 const outputDifficulty = document.querySelector('.level-difficulty');
 
+
+
 //LIVELLO 1
 //faccio apparire la griglia solo al click sul bottone
 buttonLevelOne.addEventListener('click', function() {
+    containerGridOne.innerHTML = ""; 
+
     buttonLevelOne.style.backgroundColor = '#a13747';
     outputDifficulty.innerHTML = `LIVELLO FACILE`;
     
@@ -27,12 +31,12 @@ buttonLevelOne.addEventListener('click', function() {
         const newBox = document.createElement('div');
         newBox.className = 'box-one';
         containerGridOne.append(newBox);
-    
+        
         newBox.addEventListener('click', function() {
             this.classList.add('light-blue');
         })
     };
-
+    
     //creo la griglia 
     for (let i = 0; i < 100; i++) {
         createGrid(containerGridOne);
@@ -41,6 +45,8 @@ buttonLevelOne.addEventListener('click', function() {
 
 //LIVELLO 2
 buttonLevelTwo.addEventListener('click', function() {
+    containerGridTwo.innerHTML = ""; 
+
     buttonLevelTwo.style.backgroundColor = '#a13747';
     outputDifficulty.innerHTML = `LIVELLO INTERMEDIO`;
     
@@ -61,6 +67,8 @@ buttonLevelTwo.addEventListener('click', function() {
 
 //LIVELLO 3
 buttonLevelThree.addEventListener('click', function() {
+    containerGridThree.innerHTML = ""; 
+
     buttonLevelThree.style.backgroundColor = '#a13747';
     outputDifficulty.innerHTML = `LIVELLO DIFFICILE`;
     
