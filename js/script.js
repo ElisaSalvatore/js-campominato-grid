@@ -18,7 +18,6 @@ const buttonLevelThree = document.querySelector('.button.level-three');
 const outputDifficulty = document.querySelector('.level-difficulty');
 
 
-
 //LIVELLO 1
 //faccio apparire la griglia solo al click sul bottone
 buttonLevelOne.addEventListener('click', function() {
