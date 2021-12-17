@@ -8,22 +8,24 @@
 
 const containerGridOne = document.querySelector('.container');
 const containerGridTwo = document.querySelector('.container');
+const containerGridThree = document.querySelector('.container');
 
 
 const buttonLevelOne = document.querySelector('.button.level-one');
 const buttonLevelTwo = document.querySelector('.button.level-two');
+const buttonLevelThree = document.querySelector('.button.level-three');
 
-const output = document.querySelector('.level-difficulty');
+const outputDifficulty = document.querySelector('.level-difficulty');
 
 //LIVELLO 1
 //faccio apparire la griglia solo al click sul bottone
 buttonLevelOne.addEventListener('click', function() {
     buttonLevelOne.style.backgroundColor = '#a13747';
-    output.innerHTML = `LIVELLO FACILE`;
+    outputDifficulty.innerHTML = `LIVELLO FACILE`;
     
     function createGrid(container) {
         const newBox = document.createElement('div');
-        newBox.className = 'box';
+        newBox.className = 'box-one';
         containerGridOne.append(newBox);
     
         newBox.addEventListener('click', function() {
@@ -40,7 +42,7 @@ buttonLevelOne.addEventListener('click', function() {
 //LIVELLO 2
 buttonLevelTwo.addEventListener('click', function() {
     buttonLevelTwo.style.backgroundColor = '#a13747';
-    output.innerHTML = `LIVELLO INTERMEDIO`;
+    outputDifficulty.innerHTML = `LIVELLO INTERMEDIO`;
     
     function createGrid(container) {
         const newBox = document.createElement('div');
@@ -52,9 +54,27 @@ buttonLevelTwo.addEventListener('click', function() {
         })
     };
 
-    //creo la griglia 
     for (let i = 0; i < 81; i++) {
         createGrid(containerGridTwo);
     };
 });
 
+//LIVELLO 3
+buttonLevelThree.addEventListener('click', function() {
+    buttonLevelThree.style.backgroundColor = '#a13747';
+    outputDifficulty.innerHTML = `LIVELLO DIFFICILE`;
+    
+    function createGrid(container) {
+        const newBox = document.createElement('div');
+        newBox.className = 'box-three';
+        containerGridThree.append(newBox);
+    
+        newBox.addEventListener('click', function() {
+            this.classList.add('light-blue');
+        })
+    };
+
+    for (let i = 0; i < 49; i++) {
+        createGrid(containerGridThree);
+    };
+});
